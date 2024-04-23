@@ -105,7 +105,6 @@ resource "azurerm_managed_disk" "data_disk" {
   disk_size_gb         = 16
 }
 
-# Then we need to attach the data disk to the Azure virtual machine
 resource "azurerm_virtual_machine_data_disk_attachment" "disk_attach" {
   managed_disk_id    = azurerm_managed_disk.data_disk.id
   virtual_machine_id = azurerm_windows_virtual_machine.app_vm.id

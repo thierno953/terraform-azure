@@ -20,9 +20,6 @@ resource "azurerm_resource_group" "app_grp" {
   location = "West Europe"
 }
 
-# Here we are creating a storage account.
-# The storage account service has more properties and hence there are more arguements we can specify here
-
 resource "azurerm_storage_account" "storage_account" {
   name                     = "terraformstore10090"
   resource_group_name      = "app-grp"

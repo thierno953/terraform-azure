@@ -20,9 +20,6 @@ resource "azurerm_resource_group" "app_grp" {
   location = "West Europe"
 }
 
-# Here we are creating a storage account.
-# The storage account service has more properties and hence there are more arguements we can specify here
-
 resource "azurerm_storage_account" "storage_account" {
   name                     = "terraformstore10090"
   resource_group_name      = "app-grp"
@@ -32,7 +29,6 @@ resource "azurerm_storage_account" "storage_account" {
   allow_blob_public_access = true
 }
 
-# Here we are creating a container in the storage account
 resource "azurerm_storage_container" "data" {
   name                 = "data"
   storage_account_name = "terraformstore10090"
@@ -40,7 +36,6 @@ resource "azurerm_storage_container" "data" {
   container_access_type = "blob"
 }
 
-# This is used to upload a local file onto the container
 resource "azurerm_storage_blob" "sample" {
   name                   = "sample.txt"
   storage_account_name   = "appstore4577687"
